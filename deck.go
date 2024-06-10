@@ -9,7 +9,7 @@ func newDeck() deck {
   cards := deck{}
 
   cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
-  cardValues := []string{"Ace","Jack","Qeen", "King", "Two", "Three", "four", "Five", "Six", "Seven", "Eight", "Nine", "Ten" }
+  cardValues := []string{"Ace","Jack","Qeen", "King", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten" }
 
   for _, suit := range cardSuits {
 	for _, value := range cardValues{
@@ -26,5 +26,9 @@ return cards
 	for i, card := range d {
 		fmt.Println(i, card)
 	}
+}
 
+// Deal function that returns multiple values. One slice for Handsize and the other is the remainder from the deck
+func deal(d deck, handSize int) (deck, deck){
+	return d[:handSize], d[handSize:]
 }
